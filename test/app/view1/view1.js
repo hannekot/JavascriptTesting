@@ -61,9 +61,9 @@ angular.module('myApp.view1', ['ngRoute'])
             },
             {
                 id:4,
-                title: 'Title Ascending',
+                title: 'Title Descending',
                 key: 'title',
-                reverse: true,
+                reverse: true
             }
         ];
         view1Attributes.order =view1Attributes.orders[0];
@@ -71,5 +71,5 @@ angular.module('myApp.view1', ['ngRoute'])
         view1Attributes.addShow = function () {
             view1Attributes.shows.push(view1Attributes.new);
             view1Attributes.new = {};
-        };
+        }
 }]);
