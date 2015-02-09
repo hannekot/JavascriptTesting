@@ -9,7 +9,7 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl', [function() {
+    .controller('View2Ctrl', [function() {
     var vm = this;
         vm.List = [
 

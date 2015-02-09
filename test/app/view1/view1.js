@@ -9,10 +9,18 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function() {
-    var view1Attributes = this;
+.controller('View1Ctrl', function(drugList) {
+        var view1Attributes = this;
+        view1Attributes.drugList = drugList.drugList();
+        view1Attributes.activeDrugList = [];
         view1Attributes.title = "AngularJS Tutorial Example";
+        view1Attributes.DrugSearchInput = '';
         view1Attributes.searchInput = '';
+        view1Attributes.addDrugToActiveList = function (drug) {
+            if(view1Attributes.activeDrugList.indexOf(drug) == -1){
+                view1Attributes.activeDrugList.push(drug);
+            }
+        }
         view1Attributes.shows = [
             {
                 title: 'Game of Thrones',
@@ -72,4 +80,4 @@ angular.module('myApp.view1', ['ngRoute'])
             view1Attributes.shows.push(view1Attributes.new);
             view1Attributes.new = {};
         }
-}]);
+});

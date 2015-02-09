@@ -16,33 +16,21 @@
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-<div class="page-container">
-        <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <topbar></topbar>
-    <sidebar></sidebar>
-    <div class="container">
-        <div class="row row-offcanvas row-offcanvas-left">
-
-
-            <div class="col-xs-12 col-sm-9" ng-view></div>
-
-
-            <script src="bower_components/angular/angular.js"></script>
-            <script src="bower_components/angular-route/angular-route.js"></script>
-            <!--todo: remember to add all js files-->
-            <script src="app.js"></script>
-            <script src="view1/view1.js"></script>
-            <script src="view2/view2.js"></script>
-            <script src="directive/sidebar.js"></script>
-            <script src="directive/topbar.js"></script>
-            <script src="components/version/version.js"></script>
-            <script src="components/version/version-directive.js"></script>
-            <script src="components/version/interpolate-filter.js"></script>
-        </div>
-    </div>
-</div>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<div class="page-container" ng-view></div>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<!--todo: remember to add all js files-->
+<script src="app.js"></script>
+<script src="view1/view1.js"></script>
+<script src="view2/view2.js"></script>
+<script src="directive/sidebar.js"></script>
+<script src="directive/topbar.js"></script>
+<script src="service/drugList.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
 </body>
 </html>

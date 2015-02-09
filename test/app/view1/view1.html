@@ -1,40 +1,81 @@
 <div ng-controller="View1Ctrl as View1Attributes">
-    <h1>{{View1Attributes.title}}</h1>
+<topbar></topbar>
+<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
     <div class="input-group">
-        <span class="input-group-addon">
-            <span class="glyphicon glyphicon-search"></span>
-        </span>
-        <input type="text" class="form-control" ng-model="View1Attributes.searchInput">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+        <input type="text" class="form-control" ng-model="View1Attributes.DrugSearchInput"/>
     </div>
 
-    <h1>A list of TV shows</h1>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Søkbar liste av legemidler </h1>
     <ul class="list-group">
-        <li class="list-group-item" data-ng-repeat="show in View1Attributes.shows | filter:View1Attributes.searchInput | orderBy: View1Attributes.order.key:View1Attributes.order.reverse ">
-            <span class="glyphicon glyphicon-star" ng-if="show.favorite"></span>{{show.title}} <span class="badge" >{{show.year}}</span></li>
+        <li class="list-group-item" data-ng-repeat="drug in View1Attributes.drugList | filter:View1Attributes.DrugSearchInput">
+            <span>{{drug}}</span> <button class="btn btn-success pull-right" ng-click="View1Attributes.addDrugToActiveList(drug)"><span class="glyphicon glyphicon-plus-sign"></span>Legg til</button>
     </ul>
-    <select class="form-control pull-right" data-ng-model="View1Attributes.order" ng-options="order as order.title for order in View1Attributes.orders"></select>
-
-
-    <div class="clearfix"></div>
-    <h3>Add a new TV Show</h3>
-    <form name="View1Attributes.addForm" class="form" ng-submit="View1Attributes.addShow()">
-        <div class="form-group">
-            <label>Title</label>
-            <input type="text" class="form-control" ng-model="View1Attributes.new.title" required />
-        </div>
-        <div class="form-group">
-            <label>Year</label>
-            <input type="number" min="1900" max="2030" class="form-control" ng-model="View1Attributes.new.year" required />
-        </div>
-        <div class="row">
-            <div class="col-xs-6">
-                <label>Favorite: <input type="checkbox" ng-model="View1Attributes.new.favorite" /></label>
+    <h1>Dine legemidler </h1>
+    <ul class="list-group">
+        <li class="list-group-item" data-ng-repeat="drug in View1Attributes.activeDrugList">
+            <span>{{drug}}</span>
+    </ul>
+</div>
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+        <div class="col-xs-12 col-sm-9">
+            <h1>{{View1Attributes.title}}</h1>
+            <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                <input type="text" class="form-control" ng-model="View1Attributes.searchInput"/>
             </div>
-            <div class="col-xs-6">
-                <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Add</button>
-            </div>
+
+            <h1>A list of TV shows </h1>
+            <ul class="list-group">
+                <li class="list-group-item" data-ng-repeat="show in View1Attributes.shows | filter:View1Attributes.searchInput | orderBy: View1Attributes.order.key:View1Attributes.order.reverse ">
+                    <span class="glyphicon glyphicon-star" ng-if="show.favorite"></span>{{show.title}} <span class="badge" >{{show.year}}</span></li>
+            </ul>
+            <select class="form-control pull-right" data-ng-model="View1Attributes.order" ng-options="order as order.title for order in View1Attributes.orders"></select>
+
+            <div class="clearfix"></div>
+            <h3>Add a new TV Show</h3>
+            <form name="View1Attributes.addForm" class="form" ng-submit="View1Attributes.addShow()">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" ng-model="View1Attributes.new.title" required />
+                </div>
+                <div class="form-group">
+                    <label>Year</label>
+                    <input type="number" min="1900" max="2030" class="form-control" ng-model="View1Attributes.new.year" required />
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>Favorite: <input type="checkbox" ng-model="View1Attributes.new.favorite" /></label>
+                    </div>
+                    <div class="col-xs-6">
+                        <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Add</button>
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
-
-
+    </div>
+</div>
 </div>
