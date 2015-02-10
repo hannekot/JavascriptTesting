@@ -4,7 +4,12 @@
     <div class="row row-offcanvas row-offcanvas-left">
         <div class="col-xs-12 col-sm-9" ng-controller="View2Ctrl">
         <p>This is the partial for view 2.</p>
-
+            <div class="main">
+                <h2>Search for new released movies:</h2>
+                <h4>Custom templates for results</h4>
+                <pre>Model: {{customSelected | json}}</pre>
+                <input type="text" ng-model="customSelected" placeholder="Custom template" typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" class="form-control">
+            </div>
         </div>
     </div>
 </div>
