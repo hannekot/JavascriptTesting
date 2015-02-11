@@ -9,19 +9,11 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', function(drugList) {
-        var view1Attributes = this;
-        view1Attributes.drugList = drugList.drugList();
-        view1Attributes.activeDrugList = [];
-        view1Attributes.title = "AngularJS Tutorial Example";
-        view1Attributes.DrugSearchInput = '';
-        view1Attributes.searchInput = '';
-        view1Attributes.addDrugToActiveList = function (drug) {
-            if(view1Attributes.activeDrugList.indexOf(drug) == -1){
-                view1Attributes.activeDrugList.push(drug);
-            }
-        }
-        view1Attributes.shows = [
+.controller('View1Ctrl', function($scope) {
+        $scope.title = "AngularJS Tutorial Example";
+        $scope.DrugSearchInput = '';
+        $scope.searchInput = '';
+        $scope.shows = [
             {
                 title: 'Game of Thrones',
                 year: 2011,
@@ -48,7 +40,7 @@ angular.module('myApp.view1', ['ngRoute'])
                 favorite: false
             }
         ];
-        view1Attributes.orders = [
+        $scope.orders = [
             {
                 id:1,
                 title: 'Year Ascending',
@@ -74,10 +66,10 @@ angular.module('myApp.view1', ['ngRoute'])
                 reverse: true
             }
         ];
-        view1Attributes.order =view1Attributes.orders[0];
-        view1Attributes.new = {};
-        view1Attributes.addShow = function () {
-            view1Attributes.shows.push(view1Attributes.new);
-            view1Attributes.new = {};
+        $scope.order =$scope.orders[0];
+        $scope.new = {};
+        $scope.addShow = function () {
+            $scope.shows.push($scope.new);
+            $scope.new = {};
         }
 });
