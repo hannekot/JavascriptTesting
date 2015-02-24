@@ -5,6 +5,7 @@ var myApp = angular.module('myApp', [
   'ngRoute',
   'myApp.view1',
   'myApp.view2',
+  'myApp.interaksjoner',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {

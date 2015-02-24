@@ -1,0 +1,17 @@
+<topbar></topbar>
+<sidebar></sidebar>
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+        <div class="col-xs-12 col-sm-9" ng-controller="View2Ctrl">
+            <p>This is the partial for view 2.</p>
+            <div>
+                <h4>Søk etter legemidler</h4>
+                <input type="text" ng-model="selected" typeahead="drug for drug in drugList | filter:$viewValue | limitTo:8" class="form-control" typeahead-on-select="onSelect($item)" placeholder="Skriv inn ditt legemiddel her"/>
+                <h4>Min legemiddelliste</h4>
+                <ul class="list-group">
+                    <li class="list-group-item" data-ng-repeat="drug in myDrugList">{{drug}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
