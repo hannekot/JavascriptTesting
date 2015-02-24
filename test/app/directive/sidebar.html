@@ -1,13 +1,7 @@
-<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-    <ul class="nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
+<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation" ng-controller="View2Ctrl">
+
+    <ul class="list-group nav">
+        <li class="list-group-item" data-ng-repeat="drug in myDrugList">{{drug}}</li>
     </ul>
-    <div class="form-group move-down">
-        <label>Søk etter legemiddel {{druglist}}</label>
-        <input type="text" class="form-control" placeholder="I do not work"/>
-    </div>
 
 </div>
