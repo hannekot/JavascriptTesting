@@ -6,6 +6,8 @@ var myApp = angular.module('myApp', [
   'myApp.view1',
   'myApp.minlegemiddelliste',
   'myApp.interaksjoner',
+  'myApp.search',
+  'myApp.minprofil',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
